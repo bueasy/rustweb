@@ -8,8 +8,9 @@ use nickel::{Nickel, Request, Response, HttpRouter, MiddlewareResult, MediaType,
 
 fn content_type<'a>(req: &mut Request, res: Response<'a>) -> MiddlewareResult<'a> {
     let mut data = HashMap::<&str, String>::new();
-    println!("pId:	{}", req.param("pId").is_some());
+    // println!("pId:	{}", req.param("pId").is_some());
     let mut id = "index.html";
+
     if (req.param("pId").is_some()) {
         id = req.param("pId").unwrap().trim();
     }
